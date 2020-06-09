@@ -1,0 +1,21 @@
+
+<label for="new-email">Email for new domain</label>
+<input id="new-email" type="email" placeholder="someone@somewhere.com" [(ngModel)]="newEmail" class="form-control" />
+<button class="button" (click)="newEmailHandler()">Add</button>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Domain Name</th>
+      <th>Last Updated</th>
+      <th>Is Complient</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let domain of domains">
+      <td>{{domain.name}}</td>
+      <td>{{domain.lastUpdated |date: 'dd-MM-yyyy hh:mm:ss'}}</td>
+      <td>{{domain.isComplient}}</td>
+    </tr>
+  </tbody>
+</table>
